@@ -1,0 +1,571 @@
+ /* Reset default styling */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+    background-image: url('your-background-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; /* Change text color if needed */
+}
+
+/* Container for all content */
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 1.3%;
+    position: relative;
+    z-index: 5; /* Increased z-index to ensure dropdown is on top */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 20px;
+    color: #4a4a4a;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d33c32;
+}
+
+/* Dropdown menu */
+.nav-item.dropdown {
+    position: relative;
+    z-index: 10; /* Increased z-index to bring it above the hero section */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    top: 100%;
+    left: 0;
+    border: 1px solid #ccc;
+    z-index: 10; /* Ensure dropdown is on top */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.nav-item.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+nav {
+padding: 0 10px;
+}
+
+.logo {
+padding-left: 0;
+}
+
+.nav-links {
+display: none;
+flex-direction: column;
+align-items: center;
+position: absolute;
+top: 60px;
+right: 0;
+background-color: #ffffff;
+width: 100%;
+height: 100vh;
+padding-top: 20px;
+}
+
+.nav-links.active {
+display: flex;
+}
+
+.nav-links li {
+margin: 20px 0; /* Adds vertical spacing between items */
+}
+
+.hamburger {
+display: flex;
+flex-direction: column;
+cursor: pointer;
+margin-left: auto; /* Pushes the hamburger to the right */
+}
+
+.hamburger .bar {
+width: 25px;
+height: 3px;
+background-color: #333;
+margin: 4px 0;
+}
+.container{
+        margin-left:0;
+        padding-left: 0;
+    }
+    .hero-section {
+       
+        font-size: 20px;
+        text-align: left;
+    }
+    .hero-section h1{
+        margin-left:0;
+        padding-left: 0;
+        font-size: 40px;
+        width:100%;
+        text-align: left;
+    }
+     .hero-section p{
+        margin-left:0;
+        padding-left: 0;
+        width:100%;
+        font-size: 20px;
+    }
+     .cta-button {
+        padding: 10px 5px;
+        font-size: 18px;
+    }
+    .hero-image {
+        display: none;
+    }
+}
+
+
+/* Hero Section */
+.hero-section {
+    z-index: 1; /* Lowered z-index so that the dropdown appears above */
+    background:beige;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: calc(-50vw + 50%);
+    width: 99.4vw;
+    padding: 0 15%;
+    color: brown;
+    text-align: left;
+    position: relative;
+    overflow: visible; /* Allow overflow outside the hero section */
+}
+
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40%; /* Adjust the width of the image container */
+    height: 50%;
+    overflow: visible;
+    z-index: 1;
+}
+
+.hero-image img {
+    padding-top: 10%;
+    
+    position: absolute;
+    width: 80%; /* Make the image fill the container */
+    height: auto; /* Adjust height automatically */
+    object-fit: cover;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.hero-image img.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hero-image img.slide-out {
+    transform: translateX(-100%);
+}
+
+.hero-image img.slide-in {
+    transform: translateX(100%);
+}
+
+/* Hero Section Content */
+.hero-section h1,
+.hero-section p,
+.cta-button {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-section h1 {
+    padding-left: 6.2%;
+    line-height: 120%;
+    padding-top: 8%;
+    margin-right: 35%;
+    font-size: 60px;
+    animation-delay: 0.5s;
+    position: relative;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.hero-section p {
+    
+    line-height: 130%;
+    padding-top: 1.5%;
+    font-size: 25px;
+    margin-right: 35%;
+    padding-left: 6.2%;
+    animation-delay: 1s;
+}
+
+.cta-button {
+    margin-bottom: 3%;
+    z-index: 3;
+    margin-right: 10%;
+    margin-top: 3%;
+    margin-left: 6.2%;
+    background-color: #ffffff;
+    color: rgb(6, 13, 80);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    animation-delay: 1.5s;
+}
+
+.cta-button:hover {
+    background-color: brown;
+    color:#fff;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container{
+        margin-left:0;
+        padding-left: 0;
+    }
+    .hero-section {
+       width:100vw;
+        font-size: 20px;
+        flex-direction: column;
+        text-align: left;
+    }
+    .hero-section h1{
+        margin-left:0;
+        padding-left: 5%;
+        font-size: 40px;
+        width:100%;
+        text-align: left;
+    }
+     .hero-section p{
+        margin-left:0;
+        padding-left: 0;
+        width:100%;
+        font-size: 20px;
+     }
+     .cta-button {
+        padding: 10px 5px;
+        font-size: 18px;
+     }
+    .hero-image {
+        display: none;
+    }
+
+}
+
+.containera{
+    padding-left: 7%;
+    width:1200px;
+}
+.descripta{
+    padding-top: 10%;
+    padding-bottom: 5%;
+    font-size: 2.5em;
+    color:#2d3748;
+}
+.about-section {
+margin-top: 10%;
+text-align: center;
+padding: 50px 20px;
+background-color: #ffffff;
+}
+
+.about-section h1 {
+
+font-size:4.0em;
+font-weight: bold;
+color: #000;
+margin-bottom: 10px;
+}
+
+.subheading {
+font-size: 2.5em;
+color: #6c757d;
+margin-bottom: 50px;
+}
+
+.stats-container {
+display: flex;
+justify-content: center;
+gap: 50px;
+}
+
+.stat-item {
+text-align: center;
+}
+
+.stat-value {
+font-size: 2.5em;
+font-weight: bold;
+color: #000;
+}
+
+.stat-currency {
+font-size: 2em;
+vertical-align: super;
+margin-right: 5px;
+}
+
+.plus-sign {
+font-size: 0.6em;
+vertical-align: super;
+}
+
+.stat-label {
+
+font-size: 1.5em;
+color: #6c757d;
+margin-top: 10px;
+display: block;
+}
+.stat-label1 {
+font-size: 1.5em;
+color: #6c757d;
+margin-top: 10px;
+display: block;
+}
+.stat-label2 {
+
+font-size: 1.5em;
+color: #6c757d;
+margin-top: 10px;
+display: block;
+}
+.ms{
+margin-top: 5%;
+margin-bottom: 10%;
+text-align: center;
+color:black;
+}
+.timeline-container {
+padding-left: 10%;
+display: flex;
+    max-width: 1100px;
+}
+
+.year-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 150px;
+}
+
+.year {
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+    padding: 10px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.year:hover,
+.year.active {
+    color: #000;
+    border-left: 4px solid #000;
+}
+
+.timeline-content {
+    margin-left: 30px;
+    width: 100%;
+}
+
+.year-content {
+    padding-bottom: 10%;
+    color:#000;
+    display: none;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    border-left: 4px solid #000;
+}
+
+.year-content.active {
+    display: block;
+}
+
+.year-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.content-box img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.content-box p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+footer {
+    background-color: rgb(249, 249, 249);
+    padding: 60px 20px;
+}
+
+.footer-containera {
+    padding-left: 5%;
+
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #555; /* Default link color */
+    position: relative; /* For positioning the underline */
+}
+
+/* Create the underline effect */
+.footer-section ul li a::after {
+    content: ''; /* No content, just the underline */
+    position: absolute;
+    bottom: 0; /* Position it just below the text */
+    left: 0;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Set the thickness of the underline */
+    background-color: #000; /* Color of the underline */
+    transition: width 0.2s ease-in-out; /* Animate the width */
+}
+
+/* On hover, make the underline grow from left to right */
+.footer-section ul li a:hover::after {
+    width: 100%; /* On hover, the underline grows to full width */
+}
+
+/* Style for social media icons */
+.social-icons a {
+    color: black; /* Set the icon color to black */
+    font-size: 24px; /* Set the size of the icons */
+    margin: 0 10px; /* Add spacing between icons */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect for the social media icons */
+.social-icons a:hover {
+    color: #555; /* Set hover effect color */
+}
+
+/* Media Query for Tablet Devices */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: left;
+    }
+    .footer-section {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .footer-section h4 {
+        font-size: 1em;
+    }
+    .footer-section ul li {
+        font-size: 0.9em;
+    }
+}
+.footer-credits {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 20px;
+}

@@ -1,0 +1,433 @@
+ /* Reset default styling */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+    background-color: #ffffff;
+}
+
+/* Container for all content */
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1.3%;
+    position: relative;
+    z-index: 1000; /* Ensure header is above hero-section */
+}
+
+nav {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Aligns logo left and hamburger right */
+    align-items: center;
+    padding: 0 50px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 20px;
+    color: #4a4a4a;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d33c32;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Dropdown Menu */
+.nav-item.dropdown {
+    position: relative; /* Ensure relative positioning for dropdown alignment */
+    z-index: 1100;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 300px; /* Fixed width to prevent overflow */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    top: 100%;
+    left: 0;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    white-space: normal; /* Ensure text wraps */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.nav-item.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    nav {
+        padding: 0 10px;
+    }
+
+    .logo {
+        padding-left: 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #ffffff;
+        width: 100%;
+        height: 100vh;
+        padding-top: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 20px 0; /* Add margin for vertical spacing */
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        margin-left: auto; /* Pushes the hamburger to the right */
+    }
+
+    .hamburger .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 4px 0;
+    }
+    .main-content {
+        width:100%;
+        flex-direction: column;
+        text-align: left;
+    }
+    .text-content h1{
+        padding:0;
+        flex-grow: 1; /* Allow it to take the remaining space */
+        font-size: 40px;
+        width:150%;
+    }
+    .text-content p{
+        padding: 0; /* Remove left and right padding */
+        flex-grow: 1; /* Allow it to take the remaining space */
+        font-size: 20px;
+        width:150%;
+    }
+
+    .image-content img {
+        width: 100%;
+    }
+} 
+ /* Main Content */
+ .main-content {
+    display: flex;
+    justify-content: space-between;
+     
+    padding: 20px 0;
+}
+
+.text-content {
+    padding-left: 2%;
+    width: 65%;
+    padding-right: 20px;
+}
+
+.text-content h1 {
+    padding-top: 15%;
+    padding-left: 5%;
+    
+    font-size: 50px;
+    color: #d50000;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    padding-left: 5%;
+    padding-top: 5%;
+    
+    font-size: 25px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#demo-btn {
+    margin-left: 5%;
+    background-color: #d50000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.image-content img {
+    padding-top: 10%;
+    padding-left: 5%;
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth zoom and shadow transition */
+}
+.image-content img:hover {
+transform: scale(1.1); /* Slightly zoom in the image */
+.image-content img:hover {
+transform: scale(1.1); /* Slightly zoom in the image */
+box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+}
+
+/* Features Section */
+.feho{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 4%;
+     
+   font-size: 50px;
+}
+.features-section {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 2%;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.feature-item i {
+    padding-left: 6%;
+    font-size: 30px;
+    color:green;
+}
+
+.feature-content h3 {
+    padding-left: 2%;
+    font-size: 1.7em;
+    margin: 0;
+    color: #333;
+}
+
+.feature-content p {
+    font-weight: 400;
+    margin: 5px 0 0;
+    padding-left: 2%;
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fit{
+        width:100%;
+    }
+    .main-content {
+        width:100%;
+        flex-direction: column;
+        text-align: left;
+    }
+    .text-content h1{
+        padding:0;
+        flex-grow: 1; /* Allow it to take the remaining space */
+        font-size: 40px;
+        width:150%;
+    }
+    .text-content p{
+        padding: 0; /* Remove left and right padding */
+        flex-grow: 1; /* Allow it to take the remaining space */
+        font-size: 20px;
+        width:150%;
+    }
+
+    .image-content img {
+        width: 80%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .text-content {
+        padding-right: 0;
+    }
+
+    
+    .features-section h1{
+        font-size: 37px ;
+    }
+    .features-section h3{
+        font-size: 25px ;
+    }
+    .features-section {
+       text-align: left;
+    }
+}
+footer {
+    background-color: rgb(249, 249, 249);
+    padding: 60px 20px;
+}
+
+.footer-containera {
+    padding-left: 5%;
+
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1 1 250px;
+    margin: 10px;
+}
+
+.footer-section h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #555; /* Default link color */
+    position: relative; /* For positioning the underline */
+}
+
+/* Create the underline effect */
+.footer-section ul li a::after {
+    content: ''; /* No content, just the underline */
+    position: absolute;
+    bottom: 0; /* Position it just below the text */
+    left: 0;
+    width: 0%; /* Start with no underline */
+    height: 2px; /* Set the thickness of the underline */
+    background-color: #000; /* Color of the underline */
+    transition: width 0.2s ease-in-out; /* Animate the width */
+}
+
+/* On hover, make the underline grow from left to right */
+.footer-section ul li a:hover::after {
+    width: 100%; /* On hover, the underline grows to full width */
+}
+
+/* Style for social media icons */
+.social-icons a {
+    color: black; /* Set the icon color to black */
+    font-size: 24px; /* Set the size of the icons */
+    margin: 0 10px; /* Add spacing between icons */
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect for the social media icons */
+.social-icons a:hover {
+    color: #555; /* Set hover effect color */
+}
+
+/* Media Query for Tablet Devices */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: left;
+    }
+    .footer-section {
+        text-align: left;
+        width: 100%;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .footer-section h4 {
+        font-size: 1em;
+    }
+    .footer-section ul li {
+        font-size: 0.9em;
+    }
+}
+
+.footer-credits {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 20px;
+}
